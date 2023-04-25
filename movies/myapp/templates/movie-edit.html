@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block title_block%} 
+<title>movie update</title>
+{%endblock%}
+
+{%block body_block%}
+<div class="container">
+    {%for m in messages%}
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{m}}</strong> 
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {%endfor%}
+    <h1 class="text-center">Update movie here</h1>
+    <form action="" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" value="edit" class="btn btn-info">
+
+    </form>
+</div>
+{%endblock%}
